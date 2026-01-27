@@ -6,11 +6,30 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 21:22:23 by kkaman            #+#    #+#             */
-/*   Updated: 2026/01/26 20:15:41 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/01/27 21:41:02 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft.h"
+
+static int	is_number(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	if (!s[i])
+		return (0);
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 static void	process_split(t_stack **a, char **split)
 {

@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 19:46:22 by kkaman            #+#    #+#             */
-/*   Updated: 2026/01/26 20:30:04 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/01/27 21:30:34 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	free_stack(t_stack **stack)
 	t_stack	*tmp;
 
 	if (!stack || !*stack)
-		return (0);
+		return ;
 	current = *stack;
 	while (current)
 	{
