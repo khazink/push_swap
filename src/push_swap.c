@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 16:52:16 by kkaman            #+#    #+#             */
-/*   Updated: 2026/01/26 21:50:23 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/01/28 21:25:08 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	main(int argc, char **argv)
 {
-	//t_stack *a;
+	t_stack	*a;
 
-	parse_arg(argc, argv);
-
+	a = parse_arg(argc, argv);
+	print_stacks(a, NULL);
 	return (0);
 }
