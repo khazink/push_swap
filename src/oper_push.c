@@ -6,14 +6,14 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 22:40:29 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/05 00:28:09 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/05 00:40:30 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-static int	push(t_stack **dst, t_stack **src)
+static void	push(t_stack **dest, t_stack **src)
 {
 	t_stack	*push_node;
 

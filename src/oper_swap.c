@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 17:38:29 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/05 00:31:06 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/05 00:38:38 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	swap(t_stack *stack)
 	stack->next->value = tmp_val;
 	tmp_idx = stack->index;
 	stack->index = stack->next->index;
-	stack->next->index = tmp_indx;
+	stack->next->index = tmp_idx;
 	return (1);
 }
 

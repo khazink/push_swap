@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:57:22 by kkaman            #+#    #+#             */
-/*   Updated: 2026/01/28 21:23:22 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/05 00:38:00 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ void	free_split(char **split);
 // --- Add Stack ---
 t_stack	*ft_stack_new(int value);
 void	ft_stack_add_back(t_stack **stack, t_stack *new_node);
+
+// --- Operation ---
+void	sa(t_stack **a, int to_print);
+void	sb(t_stack **b, int to_print);
+void	ss(t_stack **a, t_stack **b, int to_print);
+void	pa(t_stack **a, t_stack **b, int to_print);
+void	pb(t_stack **a, t_stack **b, int to_print);
 
 // --- Util function ---
 int		ft_atoi(const char *str);
