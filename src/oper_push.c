@@ -17,7 +17,7 @@ static void	push(t_stack **dest, t_stack **src)
 {
 	t_stack	*push_node;
 
-	if (!src)
+	if (!src || !*src || !dest)
 		return ;
 	push_node = *src;
 	*src = (*src)->next;
@@ -32,7 +32,7 @@ static void	push(t_stack **dest, t_stack **src)
 	else
 	{
 		push_node->next = *dest;
-		(*dest)->prev = push_node;
+		push_node->next->prev = push_node;
 		*dest = push_node;
 	}
 }
@@ -40,6 +40,8 @@ static void	push(t_stack **dest, t_stack **src)
 //take first element in b and put it on top of a. Do nothing if empty
 void	pa(t_stack **a, t_stack **b, int to_print)
 {
+	if (!b || !*b)
+		return ;
 	push(a, b);
 	if (to_print)
 		write(1, "pa\n", 3);
@@ -49,6 +51,8 @@ void	pa(t_stack **a, t_stack **b, int to_print)
 //move first a element to on top of b. if b have something
 void	pb(t_stack **a, t_stack **b, int to_print)
 {
+	if (!a || !*a)
+		return ;
 	push(b, a);
 	if (to_print)
 		write(1, "pb\n", 3);
