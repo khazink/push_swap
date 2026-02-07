@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   oper_rotate.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/07 13:59:16 by kkaman            #+#    #+#             */
+/*   Updated: 2026/02/07 14:24:49 by kkaman           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "push_swap.h"
 
-static t_stack *get_last_node(t_stack *stack)
+t_stack	*get_last_node(t_stack *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -13,8 +25,8 @@ static t_stack *get_last_node(t_stack *stack)
 static void	rotate(t_stack **stack)
 {
 	t_stack	*old_head;
-	t_stack *new_head;
-	t_stack *tail;
+	t_stack	*new_head;
+	t_stack	*tail;
 
 	if (!*stack || !(*stack)->next)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:57:22 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/05 00:38:00 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/07 14:49:02 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,16 @@ void	sb(t_stack **b, int to_print);
 void	ss(t_stack **a, t_stack **b, int to_print);
 void	pa(t_stack **a, t_stack **b, int to_print);
 void	pb(t_stack **a, t_stack **b, int to_print);
+void	ra(t_stack **a, int to_print);
+void	rb(t_stack **b, int to_print);
+void	rr(t_stack **a, t_stack **b, int to_print);
+void	rra(t_stack **a, int to_print);
+void	rrb(t_stack **b, int to_print);
+void	rrr(t_stack **a, t_stack **b, int to_print);
 
 // --- Util function ---
 int		ft_atoi(const char *str);
 int		ft_isNumber(char *argv);
+t_stack	*get_last_node(t_stack *stack);
 
 #endif

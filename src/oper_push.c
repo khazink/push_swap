@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 22:40:29 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/05 00:40:30 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/07 14:44:39 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static void	push(t_stack **dest, t_stack **src)
 	}
 }
 
-//take first element in b and put it on top of a. Do nothing if empty
 void	pa(t_stack **a, t_stack **b, int to_print)
 {
 	if (!b || !*b)
@@ -47,8 +46,6 @@ void	pa(t_stack **a, t_stack **b, int to_print)
 		write(1, "pa\n", 3);
 }
 
-//take first element of a and put it on top of b. Do nothing if empty
-//move first a element to on top of b. if b have something
 void	pb(t_stack **a, t_stack **b, int to_print)
 {
 	if (!a || !*a)

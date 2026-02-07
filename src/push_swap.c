@@ -16,8 +16,11 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-
+	t_stack *b;
+	
 	a = parse_arg(argc, argv);
+	print_stacks(a, NULL);
+	pa(&a, &b, 1);
 	print_stacks(a, NULL);
 	return (0);
 }

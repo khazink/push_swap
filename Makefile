@@ -6,7 +6,7 @@
 #    By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/21 18:41:56 by kkaman            #+#    #+#              #
-#    Updated: 2026/02/05 00:36:44 by kkaman           ###   ########.fr        #
+#    Updated: 2026/02/07 14:49:58 by kkaman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ LFLAGS 	= -L$(LIBFT_PATH) -lft
 RM	= rm -rf
 
 SRCS	= push_swap.c print_stack.c free_stack.c parse_args.c add_stack.c \
-	  oper_swap.c oper_push.c
+	  oper_swap.c oper_push.c oper_rotate.c oper_rev_rotate.c
 
 SRC	= $(addprefix $(SRC_PATH), $(SRCS))
 
