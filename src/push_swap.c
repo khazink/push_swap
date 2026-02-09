@@ -16,7 +16,23 @@ int	is_sorted(t_stack *stack)
 
 void	assign_index(t_stack *stack)
 {
-	
+	t_stack	*current;
+	t_stack	*compare;
+	int	count;
+
+	current = stack;
+	while (current)
+	{
+		compare = stack;
+		count = 0;
+		while (compare)
+		{
+			if (compare->value < current->value)
+				count++;
+			compare = compare->next;
+		}
+		current->index = count;
+		current = current->next;
 }
 
 int	main(int argc, char **argv)
