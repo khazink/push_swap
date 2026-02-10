@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/10 18:14:06 by kkaman            #+#    #+#             */
+/*   Updated: 2026/02/10 18:14:49 by kkaman           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "push_swap.h"
 
@@ -18,7 +30,7 @@ void	assign_index(t_stack *stack)
 {
 	t_stack	*current;
 	t_stack	*compare;
-	int	count;
+	int		count;
 
 	current = stack;
 	while (current)
@@ -33,13 +45,14 @@ void	assign_index(t_stack *stack)
 		}
 		current->index = count;
 		current = current->next;
+	}
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
-	int	size;
+	int		size;
 
 	b = NULL;
 	if (argc < 2)

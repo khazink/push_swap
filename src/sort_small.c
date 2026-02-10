@@ -6,32 +6,71 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:06:27 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/10 17:49:10 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/10 18:13:34 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-static int	find_min_position(t_stack **a)
+static int	find_min_position(t_stack *stack)
 {
-	while ((*a))
+	t_stack	*tmp;
+	int		min_index;
+	int		min_pos;
+	int		current_pos;
+
+	if (!stack)
+		return (-1);
+	tmp = stack;
+	min_index = tmp->index;
+	min_pos = 0;
+	current_pos = 0;
+	while (tmp)
 	{
-		if (
+		if (tmp->index < min_index)
+		{
+			min_index = tmp->index;
+			min_pos = current_pos;
+		}
+		tmp = tmp->next;
+		current_pos++;
 	}
+	return (min_pos);
 }
 
 static void	move_to_top(t_stack **a, int min_pos)
 {
-	
+	int	size;
+
+	size = ft_lstsize(*a);
+	if (min_pos <= size / 2)
+	{
+		while (min_pos > 0)
+		{
+			ra(a);
+			min_pos--;
+		}
+	}
+	else
+	{
+		while (min_pos < size)
+		{
+			rra(a);
+			min_pos++;
+		}
+	}
 }
 
-static void    sort_three(t_stack **a)
+static void	sort_three(t_stack **a)
 {
-	int first = (*a)->value;
-	int second = (*a)->next->value;
-	int third = (*a)->next->next->value;
+	int	first;
+	int	second;
+	int	third;
 
+	first = (*a)->value;
+	second = (*a)->next->value;
+	third = (*a)->next->next->value;
 	if (first > second && second < third && first < third)
 		sa(a);
 	else if (first > second && second > third)
@@ -50,29 +89,29 @@ static void    sort_three(t_stack **a)
 		rra(a);
 }
 
-static void    sort_five(t_stack **a, t_stack **b)
+static void	sort_five(t_stack **a, t_stack **b)
 {
 	int	min_pos;
 
-	while (ft_lstsize(a) > 3)
+	while (ft_lstsize(*a) > 3)
 	{
-		min_pos = find_min_position(a);
+		min_pos = find_min_position(*a);
 		move_to_top(a, min_pos);
-		pb(&a, &b)
+		pb(&a, &b);
 	}
 	sort_three(a);
 	pa(&a, &b);
 }
 
-void    sort_small(t_stack **a, t_stack **b, int size)
+void	sort_small(t_stack **a, t_stack **b, int size)
 {
-    if (size == 2)
-    {
-	if ((*a)->value > (*a)->next->value)
-		sa(a);
-    }
-    else if (size == 3)
-        sort_three(a);
-    else if (size <= 5)
-        sort_five(a, b);
+	if (size == 2)
+	{
+		if ((*a)->value > (*a)->next->value)
+			sa(a);
+	}
+	else if (size == 3)
+		sort_three(a);
+	else if (size <= 5)
+		sort_five(a, b);
 }
