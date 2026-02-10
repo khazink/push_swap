@@ -53,7 +53,5 @@ int	main(int argc, char **argv)
 	assign_index(a);
 	size = ft_lstsize(a);
 	if (size <= 5)
-		sort_small(a, b);
-	else
-		sort_large(a, b);
+		sort_small(&a, &b, size);
 }
