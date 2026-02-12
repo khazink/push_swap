@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:06:27 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/10 18:13:34 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/12 17:30:55 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ static void	move_to_top(t_stack **a, int min_pos)
 {
 	int	size;
 
-	size = ft_lstsize(*a);
+	size = ft_size(*a);
 	if (min_pos <= size / 2)
 	{
 		while (min_pos > 0)
 		{
-			ra(a);
+			ra(a, 1);
 			min_pos--;
 		}
 	}
@@ -56,7 +56,7 @@ static void	move_to_top(t_stack **a, int min_pos)
 	{
 		while (min_pos < size)
 		{
-			rra(a);
+			rra(a, 1);
 			min_pos++;
 		}
 	}
@@ -72,35 +72,36 @@ static void	sort_three(t_stack **a)
 	second = (*a)->next->value;
 	third = (*a)->next->next->value;
 	if (first > second && second < third && first < third)
-		sa(a);
+		sa(a, 1);
 	else if (first > second && second > third)
 	{
-		sa(a);
-		rra(a);
+		sa(a, 1);
+		rra(a, 1);
 	}
 	else if (first > second && second < third && first > third)
-		ra(a);
+		ra(a, 1);
 	else if (first < second && second > third && first < third)
 	{
-		sa(a);
-		ra(a);
+		sa(a, 1);
+		ra(a, 1);
 	}
 	else if (first < second && second > third && first > third)
-		rra(a);
+		rra(a, 1);
 }
 
 static void	sort_five(t_stack **a, t_stack **b)
 {
 	int	min_pos;
 
-	while (ft_lstsize(*a) > 3)
+	while (ft_size(*a) > 3)
 	{
 		min_pos = find_min_position(*a);
 		move_to_top(a, min_pos);
-		pb(&a, &b);
+		pb(a, b, 1);
 	}
 	sort_three(a);
-	pa(&a, &b);
+	while (*b)
+		pa(a, b, 1);
 }
 
 void	sort_small(t_stack **a, t_stack **b, int size)
@@ -108,7 +109,7 @@ void	sort_small(t_stack **a, t_stack **b, int size)
 	if (size == 2)
 	{
 		if ((*a)->value > (*a)->next->value)
-			sa(a);
+			sa(a, 1);
 	}
 	else if (size == 3)
 		sort_three(a);

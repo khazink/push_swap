@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/28 21:15:51 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/12 17:28:58 by kkaman           ###   ########.fr       */
+/*   Created: 2026/02/12 16:23:13 by kkaman            #+#    #+#             */
+/*   Updated: 2026/02/12 16:31:58 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
+#include "libft.h"
 
-void	print_stacks(t_stack *a, t_stack *b)
+int	ft_size(t_stack *stack)
 {
-	printf("\n------- Debug -------\n");
-	printf("  Stack A	Stack B \n");
-	printf("-------------------------\n");
-	while (a != NULL || b != NULL)
+	int	count;
+
+	count = 0;
+	while (stack != NULL)
 	{
-		if (a)
-		{
-			printf("    %d", a->value);
-			a = a->next;
-		}
-		else
-			printf("     	   ");
-		if (b)
-		{
-			printf("     	   %d", b->value);
-			b = b->next;
-		}
-		printf("\n");
+		count++;
+		stack = stack->next;
 	}
-	printf("----------------------\n\n");
+	return (count);
 }

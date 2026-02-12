@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:14:06 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/10 18:14:49 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/12 17:26:41 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,15 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	a = parse_arg(argc, argv);
+	print_stacks(a, b);
 	if (is_sorted(a))
 	{
 		free_stack(&a);
 		return (0);
 	}
 	assign_index(a);
-	size = ft_lstsize(a);
+	size = ft_size(a);
 	if (size <= 5)
 		sort_small(&a, &b, size);
+	print_stacks(a, b);
 }
