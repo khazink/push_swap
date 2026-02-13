@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:06:27 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/12 17:30:55 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/13 19:15:50 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	move_to_top(t_stack **a, int min_pos)
 	}
 }
 
-static void	sort_three(t_stack **a)
+void	sort_three(t_stack **a)
 {
 	int	first;
 	int	second;

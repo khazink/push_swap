@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 21:15:51 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/12 17:28:58 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/13 19:20:12 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_stacks(t_stack *a, t_stack *b)
 			a = a->next;
 		}
 		else
-			printf("     	   ");
+			printf("     ");
 		if (b)
 		{
 			printf("     	   %d", b->value);

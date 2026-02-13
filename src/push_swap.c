@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:14:06 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/12 17:26:41 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/13 19:14:59 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,7 @@ int	main(int argc, char **argv)
 	size = ft_size(a);
 	if (size <= 5)
 		sort_small(&a, &b, size);
+	else
+		sort_large(&a, &b);
 	print_stacks(a, b);
 }

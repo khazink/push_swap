@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:57:22 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/12 16:35:35 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/13 19:17:08 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	rrr(t_stack **a, t_stack **b, int to_print);
 
 // --- Sorting ---
 void	sort_small(t_stack **a, t_stack **b, int size);
+void	sort_three(t_stack **a);
 void	sort_large(t_stack **a, t_stack **b);
 
 // --- Util function ---
