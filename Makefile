@@ -18,7 +18,7 @@ LIBFT_PATH	= ./libft/
 
 INCLUDES = -Iincludes -I$(LIBFT_PATH)
 
-CC	= cc
+CC	= gcc
 
 CFLAGS	= -Wall -Wextra -Werror
 

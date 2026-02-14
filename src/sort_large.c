@@ -31,10 +31,10 @@ t_stack	*get_min_node(t_stack *stack)
 	}
 	return (min_node);
 }
-t_stack	get_target(t_stack *a, int b_index)
+t_stack	*get_target(t_stack *a, int b_index)
 {
 	t_stack	*target_node;
-	t_stack *a_current;
+	t_stack *current_a;
 	long	best_match_index;
 
 	current_a = a;
@@ -50,7 +50,7 @@ t_stack	get_target(t_stack *a, int b_index)
 		current_a = current_a->next;
 	}
 
-	if (best_match_index = LONG_MAX)
+	if (best_match_index == LONG_MAX)
 		return (get_min_node(a));
 	return (target_node);
 }
