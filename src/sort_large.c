@@ -86,10 +86,15 @@ static t_stack	*get_cheapest_node(t_stack *a, t_stack *b)
 
 void	sort_large(t_stack **a, t_stack **b)
 {
-	t_stack	*cheap_node;
+	t_stack	*cheapest_node;
 
 	while (ft_size(*a) > 3)
 		pb(a, b, 1);
 	sort_three(a);
-	cheap_node = get_cheapest_node(*a, *b);
+	while (*b)
+	{
+		cheapest_node = get_cheapest_node(*a, *b);
+		execute_move(a, b, cheapest_node);
+	}
+	final_alignment(a);
 }
