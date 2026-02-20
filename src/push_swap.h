@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:57:22 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/13 19:17:08 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/20 17:35:09 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef struct s_stack
 // --- Parsing and Initialization ---
 t_stack	*parse_arg(int argc, char **argv);
 
-void	print_stacks(t_stack *a, t_stack *b);
 void	error_exit(t_stack **a, t_stack **b);
 void	free_stack(t_stack **stack);
 void	free_split(char **split);
@@ -54,6 +53,13 @@ void	rrr(t_stack **a, t_stack **b, int to_print);
 void	sort_small(t_stack **a, t_stack **b, int size);
 void	sort_three(t_stack **a);
 void	sort_large(t_stack **a, t_stack **b);
+int	calculate_cost(t_stack *a, t_stack *b, t_stack *target, t_stack *current_b);
+void	execute_move(t_stack **a, t_stack **b, t_stack *cheap_node);
+void	final_alignment(t_stack **a);
+int	get_position(t_stack *stack, t_stack *node);
+t_stack	*get_target(t_stack *a, int b_index);
+int	max_val(int a, int b);
+void	move_a_to_top(t_stack **a, t_stack *target_node);
 
 // --- Util function ---
 int		ft_size(t_stack *stack);

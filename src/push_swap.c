@@ -6,14 +6,14 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:14:06 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/13 19:14:59 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/20 14:40:56 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-int	is_sorted(t_stack *stack)
+static int	is_sorted(t_stack *stack)
 {
 	if (!stack)
 		return (1);
@@ -26,7 +26,7 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-void	assign_index(t_stack *stack)
+static void	assign_index(t_stack *stack)
 {
 	t_stack	*current;
 	t_stack	*compare;

@@ -6,7 +6,7 @@
 #    By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/21 18:41:56 by kkaman            #+#    #+#              #
-#    Updated: 2026/02/13 19:13:37 by kkaman           ###   ########.fr        #
+#    Updated: 2026/02/20 16:14:52 by kkaman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ RM	= rm -rf
 
 SRCS	= push_swap.c print_stack.c free_stack.c parse_args.c add_stack.c \
 	  oper_swap.c oper_push.c oper_rotate.c oper_rev_rotate.c utils.c \
-	  sort_small.c sort_large.c
+	  sort_small.c sort_large.c calculate_cost.c execute_move.c \
+	  final_alignment.c
 
 SRC	= $(addprefix $(SRC_PATH), $(SRCS))
 
