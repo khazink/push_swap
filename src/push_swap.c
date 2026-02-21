@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:14:06 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/21 16:07:48 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/21 17:10:43 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	is_sorted(t_stack *stack)
 {
 	if (!stack)
 		return (1);
-	while (stack)
+	while (stack && stack->next)
 	{
 		if (stack->value > stack->next->value)
 			return (0);

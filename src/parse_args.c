@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 21:22:23 by kkaman            #+#    #+#             */
-/*   Updated: 2026/01/28 21:30:14 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/21 17:13:29 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,11 @@ t_stack	*parse_arg(int argc, char **argv)
 		split = ft_split(argv[i], ' ');
 		if (!split)
 			error_exit(&a, NULL);
+		if (!split[0])
+		{
+			free_split(split);
+			error_exit(&a, NULL);
+		}
 		process_split(&a, split);
 		free_split(split);
 		i++;
