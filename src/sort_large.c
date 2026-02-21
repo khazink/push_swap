@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/13 18:54:05 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/13 22:58:35 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/21 14:53:16 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ t_stack	*get_min_node(t_stack *stack)
 	}
 	return (min_node);
 }
+
 t_stack	*get_target(t_stack *a, int b_index)
 {
 	t_stack	*target_node;
-	t_stack *current_a;
+	t_stack	*current_a;
 	long	best_match_index;
 
 	current_a = a;
@@ -49,7 +50,6 @@ t_stack	*get_target(t_stack *a, int b_index)
 		}
 		current_a = current_a->next;
 	}
-
 	if (best_match_index == LONG_MAX)
 		return (get_min_node(a));
 	return (target_node);
@@ -58,27 +58,23 @@ t_stack	*get_target(t_stack *a, int b_index)
 static t_stack	*get_cheapest_node(t_stack *a, t_stack *b)
 {
 	t_stack	*current_b;
-	t_stack *cheapest_node;
-	t_stack *target;
-	int	min_cost;
-	int	cost;
+	t_stack	*cheapest_node;
+	t_stack	*target;
+	int		min_cost;
+	int		cost;
 
 	current_b = b;
 	cheapest_node = NULL;
 	min_cost = INT_MAX;
 	while (current_b)
 	{
-		//1. find where number belong A
 		target = get_target(a, current_b->index);
-		//2. Calculate the move to get both to the top
 		cost = calculate_cost(a, b, target, current_b);
-		//3. Compare if this is the cheapest
 		if (cost < min_cost)
 		{
 			min_cost = cost;
 			cheapest_node = current_b;
 		}
-		//4. Move current_b to current_b next
 		current_b = current_b->next;
 	}
 	return (cheapest_node);

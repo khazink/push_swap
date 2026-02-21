@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 18:14:06 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/20 14:40:56 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/21 16:07:48 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	a = parse_arg(argc, argv);
-	print_stacks(a, b);
 	if (is_sorted(a))
 	{
 		free_stack(&a);
@@ -70,5 +69,4 @@ int	main(int argc, char **argv)
 		sort_small(&a, &b, size);
 	else
 		sort_large(&a, &b);
-	print_stacks(a, b);
 }

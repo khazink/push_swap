@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:57:22 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/20 17:35:09 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/21 14:55:54 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,13 @@ void	rrr(t_stack **a, t_stack **b, int to_print);
 void	sort_small(t_stack **a, t_stack **b, int size);
 void	sort_three(t_stack **a);
 void	sort_large(t_stack **a, t_stack **b);
-int	calculate_cost(t_stack *a, t_stack *b, t_stack *target, t_stack *current_b);
+int		calculate_cost(t_stack *a, t_stack *b,
+			t_stack *target, t_stack *current_b);
 void	execute_move(t_stack **a, t_stack **b, t_stack *cheap_node);
 void	final_alignment(t_stack **a);
-int	get_position(t_stack *stack, t_stack *node);
+int		get_position(t_stack *stack, t_stack *node);
 t_stack	*get_target(t_stack *a, int b_index);
-int	max_val(int a, int b);
+int		max_val(int a, int b);
 void	move_a_to_top(t_stack **a, t_stack *target_node);
 
 // --- Util function ---
