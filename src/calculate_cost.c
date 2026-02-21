@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 16:27:31 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/20 17:02:24 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/21 17:32:37 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	calculate_cost(t_stack *a, t_stack *b, t_stack *target, t_stack *current_b)
 	a_down = 0;
 	b_down = 0;
 	if (pos_a != 0)
-		pos_a = ft_size(a) - pos_a;
+		a_down = ft_size(a) - pos_a;
 	if (pos_b != 0)
-		pos_b = ft_size(b) - pos_b;
+		b_down = ft_size(b) - pos_b;
 	return (get_cheapest_scenario(pos_a, pos_b, a_down, b_down));
 }

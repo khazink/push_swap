@@ -6,7 +6,7 @@
 /*   By: kkaman <kkaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 16:14:03 by kkaman            #+#    #+#             */
-/*   Updated: 2026/02/21 16:06:30 by kkaman           ###   ########.fr       */
+/*   Updated: 2026/02/21 17:32:59 by kkaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static void	do_rotate_both(t_stack **a, t_stack **b,
 	while (*a != targ && *b != cur)
 		rr(a, b, 1);
 	move_a_to_top(a, targ);
-	move_b_to_top(a, cur);
+	move_b_to_top(b, cur);
 }
 
 static void	do_rev_rotate_both(t_stack **a, t_stack **b,
